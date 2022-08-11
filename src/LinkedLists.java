@@ -124,11 +124,16 @@ public class LinkedLists {
             return head;
         }
         Node newHead = revRec(head.next);
-        head.next.next = head;
+
+        // head.next.next = head;
+        // ?OR
+        Node headNext = head.next;
+        headNext.next = head;
+
         head.next = null;
         return newHead;
     }
- 
+
     public static void main(String[] args) {
 
         LinkedLists list = new LinkedLists();
